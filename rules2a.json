@@ -1,0 +1,39 @@
+[  {    
+    "pattern": "hi",    
+    "response": "Hello there!"  }, 
+ {    
+    "pattern": "how are you",    
+    "response": "I'm doing well, thank you for asking."  
+    },  
+ {    
+    "pattern": "what is your name",    
+    "response": "My name is Ar-vee O one."  
+},  
+ {    
+    "pattern": "what time is it",    
+    "response": "It's currently {time}."  
+    },
+
+{
+    "pattern": "open file browser",
+    "response": "cmd:gnome-terminal -- mc &",
+    "type": "cmd"
+    
+},
+
+{
+    "pattern": "close file browser",
+    "response": "cmd:pkill -x mc",
+    "type": "cmd"
+    
+},
+
+{
+    "pattern": "open chrome",
+    "response": "cmd:google-chrome &",
+    "type": "cmd"
+    
+}
+
+
+]
