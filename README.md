@@ -8,12 +8,38 @@ This Python script is a simple chatbot that uses the Google speech recognition A
  * json
 
 ## Usage
-Install the required packages by running pip install -r requirements.txt in the command line.
-Open the terminal and navigate to the directory containing the script file.
-Run the script by typing python chatbot.py in the command line.
-The chatbot will start listening to your voice input through your microphone.
-Say something and wait for the chatbot to respond.
-The chatbot will continue running until you stop the script manually.
+* Install the required packages by running pip install -r requirements.txt in the command line.
+* Open the terminal and navigate to the directory containing the script file.
+* Run the script by typing python chatbot.py in the command line.
+* The chatbot will start listening to your voice input through your microphone.
+* Say something and wait for the chatbot to respond.
+* The chatbot will continue running until you stop the script manually.
+
+## JSON file
+
+
+The JSON file contains rule-based responses to specific user inputs or patterns. 
+
+In this case, it's synthax is the following;
+
+{    
+    "pattern": "what is your name",    
+    "response": "My name is Ar-vee O one."  
+}
+
+It will wait until it hears the pattern (A question) and will provide a response. However, in order to make it more functional, a "type" field indicating that they are command responses that trigger specific actions, such as opening or closing applications.
+
+for example;
+
+{
+    "pattern": "open file browser",
+    "response": "cmd:gnome-terminal -- mc &",
+    "type": "cmd"
+    
+},
+
+The response, has the prefix of "cmd:", indicating that the response is to be executed in a CLI. This gives the advantage of having the chatbot being able to start many applications and scripts.
+
 
 ## Functions
 **recognize_speech()**
@@ -29,3 +55,8 @@ This function takes a string of text as a parameter and checks if it matches any
 * This chatbot only works with English spoken input.
 * The chatbot can only respond to phrases or commands that are specified in the rules2a.json file. It cannot handle any other requests.
 * The chatbot's response may not always be accurate or appropriate, depending on the input it receives and the rules specified in the JSON file.
+
+## TO-DO LIST
+* Add more functions and responses.
+* Have a wake-word that can be personalized.
+* Have it use an offline speech recongnition (Sphinx).
